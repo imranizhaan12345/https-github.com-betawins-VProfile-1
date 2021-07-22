@@ -49,8 +49,8 @@ pipeline {
 				-Dsonar.binaries=target/classes/com/visualpathit/account/controller/ \
 				-Dsonar.junit.reportsPath=target/surefire-reports \
 				-Dsonar.jacoco.reportPath=target/jacoco.exec \
-				-Dsonar.java.binaries=src/main/java/com/visualpathit/account/ \
-				-Dsonar.java.binaries=build/classes/java/'
+				-Dsonar.java.binaries=src/main/java/com/visualpathit/account/'
+				
 		     }
 		}
 	    }
