@@ -20,5 +20,6 @@
 					<target>${jdk.version}</target>
 				</configuration>
 			</plugin>
-	</plugins>	
+	</plugins>
+       </build>	
 </project>
