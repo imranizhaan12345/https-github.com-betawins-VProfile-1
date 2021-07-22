@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/betawins/sabear_simplecutomerapp.git';
+                    git 'https://github.com/betawins/VProfile-1.git';
                 }
             }
         }
@@ -42,14 +42,14 @@ pipeline {
             steps {
                 withSonarQubeEnv('sonarqube_server') {
 				sh '$SCANNER_HOME/bin/sonar-scanner \
-				-Dsonar.projectKey=Sabear \
-				-Dsonar.projectName=Sabear \
+				-Dsonar.projectKey=Ncodeit \
+				-Dsonar.projectName=Ncodeit \
 				-Dsonar.projectVersion=2.0 \
 				-Dsonar.sources=/var/lib/jenkins/workspace/$JOB_NAME/src/ \
 				-Dsonar.binaries=target/classes/com/visualpathit/account/controller/ \
 				-Dsonar.junit.reportsPath=target/surefire-reports \
 				-Dsonar.jacoco.reportPath=target/jacoco.exec \
-				-Dsonar.java.binaries=src/com/room/sample '
+				-Dsonar.java.binaries=src/main/java/com/visualpathit/account/ '
 				
 		     }
 		}
