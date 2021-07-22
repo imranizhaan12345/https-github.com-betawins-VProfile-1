@@ -8,12 +8,14 @@
    <name>SimpleCustomerApp</name>
    <url>http://maven.apache.org</url>
    <build>
-      <plugin>
-         <artifactId>maven-war-plugin</artifactId>
-         <version>2.6</version>
-         <configuration>
-            <failOnMissingWebXml>false</failOnMissingWebXml>
-         </configuration>
-      </plugin>
+      <plugins>
+         <plugin>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.6</version>
+            <configuration>
+               <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+         </plugin>
+      </plugins>
    </build>
 </project>
