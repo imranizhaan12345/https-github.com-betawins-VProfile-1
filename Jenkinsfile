@@ -18,6 +18,7 @@ pipeline {
         NEXUS_REPOSITORY = "soanrqube"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexus_keygen"
+		SCANNER_HOME = tool 'sonar_scanner'
     }
     stages {
         stage("clone code") {
@@ -37,6 +38,22 @@ pipeline {
                 }
             }
         }
+		stage('SonarCloud') {
+            steps {
+                withSonarQubeEnv('sonarqube_server') {
+				sh '''$SCANNER_HOME/bin/sonar-scanner \
+				-Dsonar.projectKey=Sabear \
+				-Dsonar.projectName=Sabear \
+				-Dsonar.projectVersion=2.0 \
+				-Dsonar.sources=/var/lib/jenkins/workspace/$JOB_NAME/src/ \
+				-Dsonar.binaries=target/classes/com/visualpathit/account/controller/ \
+				-Dsonar.junit.reportsPath=target/surefire-reports \
+				-Dsonar.jacoco.reportPath=target/jacoco.exec \
+				-Dsonar.java.binaries=src/main/java/com/visualpathit/account/ \
+				-Dsonar.java.binaries=build/classes/java/ \
+				}
+			}
+		}
         stage("publish to nexus") {
             steps {
                 script {
