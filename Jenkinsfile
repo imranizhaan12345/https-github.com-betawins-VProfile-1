@@ -57,7 +57,7 @@ pipeline {
                             protocol: NEXUS_PROTOCOL,
                             nexusUrl: NEXUS_URL,
 			    groupId: pom.groupId,
-                            version: 1.0-SNAPSHOT,
+                            version: pom.version,
                             repository: NEXUS_REPOSITORY,
                             credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
