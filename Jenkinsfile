@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/betawins/VProfile-1.git';
+                    git 'https://github.com/betawins/sabear_simplecutomerapp.git';
                 }
             }
         }
@@ -49,7 +49,7 @@ pipeline {
 				-Dsonar.binaries=target/classes/com/visualpathit/account/controller/ \
 				-Dsonar.junit.reportsPath=target/surefire-reports \
 				-Dsonar.jacoco.reportPath=target/jacoco.exec \
-				-Dsonar.java.binaries=src/main/java/com/visualpathit/account/ '
+				-Dsonar.java.binaries=src/com/room/sample '
 				
 		     }
 		}
